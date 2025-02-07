@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#toast-container {
+  z-index: 9999 !important;
+  position: fixed !important;
+}
+
+.blur {
+  backdrop-filter: blur(8px); /* Blurs the background behind the div */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  filter: blur(2px); /* Optionally blur the div content itself */
+}
+
+/* Global Rule for All Scrollable Elements */
+* {
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Edge */
+}
+
+.gradient-purple-white {
+  background: linear-gradient(to right, #e59cff, #ba9cff, #9cb2ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-white {
+  background: linear-gradient(to right, #ffffff, #ffffffb2);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-blue {
+  text-shadow: 0 0 20px #047cfc, 0 0 40px #047cfc, 0 0 60px #047cfc;
+}
+
+/* Orbit Container */
+.orbit-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 120%;
+  height: screen; /* Only the top half is visible */
+  transform: translateX(-50%);
+  overflow: hidden; /* Crop the bottom part */
+  z-index: 0; /* Place it behind the text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.orbit-image {
+  width: 200%; /* Scale the orbit to fit the section */
+  height: auto;
+  margin-top: 5%; /* Center the orbit */
+  animation: rotateOrbit 50s linear infinite; /* Smooth clockwise rotation */
+  transform-origin: center; /* Rotate around the center */
+}
+.orbit-inner {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80%;
+  height: screen; /* Only the top half is visible */
+  transform: translateX(-50%);
+  overflow: hidden; /* Crop the bottom part */
+  z-index: 0; /* Place it behind the text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Rotating Orbit Image */
+.orbit-inner-image {
+  width: 50%; /* Scale the orbit to fit the section */
+  height: auto;
+  margin-top: 20%; /* Center the orbit */
+  animation: rotateOrbitInner 25s linear infinite; /* Smooth clockwise rotation */
+  transform-origin: center; /* Rotate around the center */
+}
+
+/* Keyframes for Rotation */
+@keyframes rotateOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateOrbitInner {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
