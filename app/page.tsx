@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import Avoi from '@/components/Avoi';
-import Footer from '@/components/Footer';
-import HeroComponent from '@/components/HeroComponent';
-import Navbar from '@/components/Navbar';
-import Personalize from '@/components/Personalize';
-import Revoluntionalize from '@/components/Revolutionalize';
-import Singularity from '@/components/Singularity';
-import Technologies from '@/components/Technologies';
+import Avoi from "@/components/Avoi";
+import Footer from "@/components/Footer";
+import HeroComponent from "@/components/HeroComponent";
+import Navbar from "@/components/Navbar";
+import Personalize from "@/components/Personalize";
+import Revoluntionalize from "@/components/Revolutionalize";
+import Singularity from "@/components/Singularity";
+import Technologies from "@/components/Technologies";
 
 export default function Home() {
   return (

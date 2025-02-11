@@ -1,6 +1,7 @@
-'use client';
-import React from 'react';
-import { SparklesCore } from '@/components/SparklesCore';
+"use client";
+
+import React from "react";
+import { SparklesCore } from "@/components/SparklesCore";
 
 export default function Particle() {
   return (
@@ -17,7 +18,9 @@ export default function Particle() {
           speed={1}
         />
       </div>
-      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">Build faster</h1>
+      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
+        Build faster
+      </h1>
     </div>
   );
 }

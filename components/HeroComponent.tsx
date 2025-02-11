@@ -1,7 +1,8 @@
-'use client';
+/* eslint-disable @next/next/no-img-element */
+"use client";
 
-import Image from 'next/image';
-import rightArrowIcon from '@/public/neurify/rightArrow.svg';
+import Image from "next/image";
+import rightArrowIcon from "@/public/neurify/rightArrow.svg";
 
 const HeroComponent = () => {
   return (
@@ -9,17 +10,27 @@ const HeroComponent = () => {
       {/* Orbit Section */}
       <div className="orbit-wrapper sm:block hidden">
         <div className="orbit-container">
-          <img src="/neurify/tech/circle-orbit.png" alt="Rotating Orbit" className="orbit-image" />
+          <img
+            src="/neurify/tech/circle-orbit.png"
+            alt="Rotating Orbit"
+            className="orbit-image"
+          />
         </div>
         <div className="orbit-inner">
-          <img src="/neurify/tech/inner-circle.png" alt="Inner Rotating Orbit" className="orbit-inner-image" />
+          <img
+            src="/neurify/tech/inner-circle.png"
+            alt="Inner Rotating Orbit"
+            className="orbit-inner-image"
+          />
         </div>
       </div>
 
       <div className="relative top-[5%] flex flex-col items-center gap-12 mt-32 md:mt-16">
         {/* Mic Section */}
         <div className="min-w-[200px] bg-[#001123] rounded-[46px] border-4 border-[#047CFC40]/25 py-2 px-6 flex items-center space-x-3">
-          <p className="text-white text-[10px] sm:text-[16px]">Custom in-house built LLM singularity</p>
+          <p className="text-white text-[10px] sm:text-[16px]">
+            Custom in-house built LLM singularity
+          </p>
         </div>
 
         {/* Main Headline */}
@@ -44,9 +55,11 @@ const HeroComponent = () => {
           className="w-auto sm:w-auto bg-gradient-to-br from-[#047CFC] to-[#14244C] rounded-[7px] py-[10px] sm:py-[14px] px-[27px] flex items-center gap-2 text-white"
           onClick={(e) => {
             e.preventDefault();
-            const section = document.getElementById('personalize');
-            if (section) {
-              section.scrollIntoView({ behavior: 'instant' });
+            if (typeof document !== "undefined") {
+              const section = document.getElementById("personalize");
+              if (section) {
+                section.scrollIntoView({ behavior: "instant" });
+              }
             }
           }}
         >

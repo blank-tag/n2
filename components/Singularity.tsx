@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Player } from '@lottiefiles/react-lottie-player';
+import { Player } from "@lottiefiles/react-lottie-player";
 
 const Singularity = () => {
   return (
@@ -15,7 +15,8 @@ const Singularity = () => {
           Model that can do beyond your vision
         </span>
         <p className="text-[#EFEDFDB2] text-[16px] font-[400]">
-          AnyVoice is the future of AI-driven communication. Built on our multilingual engine
+          AnyVoice is the future of AI-driven communication. Built on our
+          multilingual engine
         </p>
       </div>
 
@@ -28,7 +29,7 @@ const Singularity = () => {
             autoplay
             loop
             src="https://lottie.host/7289a720-3146-406c-b8fa-a198814cf53c/4V8V6btReo.json"
-            style={{ width: '80%', height: '80%' }}
+            style={{ width: "80%", height: "80%" }}
             className="hidden lg:block"
           />
 
@@ -37,7 +38,7 @@ const Singularity = () => {
             autoplay
             loop
             src="https://lottie.host/c31d521e-d91d-4282-8a86-c282ac00f39c/TciUoVbstA.json"
-            style={{ width: '100%', height: '100%' }}
+            style={{ width: "100%", height: "100%" }}
             className="block lg:hidden scale-[1.2] transform-origin-center"
           />
         </div>

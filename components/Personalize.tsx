@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
+import Image from "next/image";
 
 const Personalize = () => {
   return (
@@ -9,16 +9,19 @@ const Personalize = () => {
         {/* Heading Section */}
         <div className="flex flex-col items-center justify-center gap-12 mx-auto text-center w-[90%] md:w-[80%] font-inter py-10">
           <div className="text-5xl font-medium sm:text-6xl">
-            <h1 className="gradient-text-white inline-block">Personalize at scale</h1>
+            <h1 className="gradient-text-white inline-block">
+              Personalize at scale
+            </h1>
             <br />
             <h1 className="gradient-text-white inline-block">in</h1>
 
             <span className="font-bold text-primary-blue"> Seconds</span>
           </div>
           <p className="px-2 text-lg break-words text-primary-grey-A9 w-full">
-            At Neurify, we envision a robust architecture capable of scaling to serve industries worldwide. From our
-            custom Singularityv1.0 engine to the seamless integration of AnyVoice, our tech stack is designed for
-            efficiency and adaptability.
+            At Neurify, we envision a robust architecture capable of scaling to
+            serve industries worldwide. From our custom Singularityv1.0 engine
+            to the seamless integration of AnyVoice, our tech stack is designed
+            for efficiency and adaptability.
           </p>
         </div>
 
@@ -29,8 +32,9 @@ const Personalize = () => {
             <div
               className="size-auto p-6 flex flex-col rounded-[24px] items-center justify-between bg-gradient-to-br from-[#14244C] to-[#040810]"
               style={{
-                border: '1px solid',
-                borderImageSource: 'linear-gradient(138.05deg, #040810 2.1%, #401484 100%)',
+                border: "1px solid",
+                borderImageSource:
+                  "linear-gradient(138.05deg, #040810 2.1%, #401484 100%)",
               }}
             >
               {/* Image Section */}
@@ -46,10 +50,13 @@ const Personalize = () => {
 
               {/* Text Section */}
               <div className="flex flex-col">
-                <p className="font-inter font-[600] text-[25px] text-[#D3B7FF] leading-tight py-5">Singularity</p>
+                <p className="font-inter font-[600] text-[25px] text-[#D3B7FF] leading-tight py-5">
+                  Singularity
+                </p>
                 <p className="font-inter font-[400] text-[16px] text-[#DBF1ED] leading-tight">
-                  Singularity, has been designed with a deeper contextual understanding, allowing it to converse
-                  naturally in multiple languages.
+                  Singularity, has been designed with a deeper contextual
+                  understanding, allowing it to converse naturally in multiple
+                  languages.
                 </p>
               </div>
 
@@ -70,8 +77,9 @@ const Personalize = () => {
             <div
               className="size-auto p-6 flex flex-col rounded-[24px] items-center justify-between bg-gradient-to-br from-[#14244C] to-[#040810]"
               style={{
-                border: '1px solid',
-                borderImageSource: 'linear-gradient(138.05deg, #040810 2.1%, #401484 100%)',
+                border: "1px solid",
+                borderImageSource:
+                  "linear-gradient(138.05deg, #040810 2.1%, #401484 100%)",
               }}
             >
               {/* Image Section */}
@@ -87,10 +95,13 @@ const Personalize = () => {
 
               {/* Text Section */}
               <div className="flex flex-col">
-                <p className="font-inter font-[600] text-[25px] text-[#D3B7FF] leading-tight py-5">AnyVoice</p>
+                <p className="font-inter font-[600] text-[25px] text-[#D3B7FF] leading-tight py-5">
+                  AnyVoice
+                </p>
                 <p className="font-inter font-[400] text-[16px] text-[#DBF1ED] leading-tight">
-                  AnyVoice is the future of AI-driven communication. Built on our multilingual engine Singularityv1.0,
-                  AnyVoice can handle over 1000+ calls simultaneously.
+                  AnyVoice is the future of AI-driven communication. Built on
+                  our multilingual engine Singularityv1.0, AnyVoice can handle
+                  over 1000+ calls simultaneously.
                 </p>
               </div>
 

@@ -1,18 +1,34 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import NeurifyLogo from '@/public/NeurifyIcon.svg';
-import Link from 'next/link';
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import NeurifyLogo from "@/public/NeurifyIcon.svg";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    if (isClient && typeof document !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setTimeout(() => {
+        router.push("/");
+      }, 300);
+    }
+  };
 
   const switchPage = (e: React.MouseEvent) => {
     e.preventDefault();
-    router.push('/contact-us');
+    router.push("/contact-us");
   };
 
   return (
@@ -21,17 +37,23 @@ const Navbar = () => {
         {/* Logo Section */}
         <Link
           href="/"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            setTimeout(() => {
-              window.location.href = '/';
-            }, 300);
-          }}
+          onClick={handleLogoClick}
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <Image src={NeurifyLogo} className="h-6 md:block hidden" alt="Neurify Logo" width={150} height={25} />
-          <Image src={NeurifyLogo} className="h-6 md:hidden" alt="Neurify Logo" width={77} height={19} />
+          <Image
+            src={NeurifyLogo}
+            className="h-6 md:block hidden"
+            alt="Neurify Logo"
+            width={150}
+            height={25}
+          />
+          <Image
+            src={NeurifyLogo}
+            className="h-6 md:hidden"
+            alt="Neurify Logo"
+            width={77}
+            height={19}
+          />
         </Link>
 
         {/* Navigation Links - Centered with Compact Background */}
@@ -39,8 +61,8 @@ const Navbar = () => {
           <div
             className={`${
               isMenuOpen
-                ? 'flex flex-col justify-center items-center  bg-[#040810] absolute w-screen h-screen top-0 left-0 z-30 border-white border-1'
-                : 'hidden md:inline-flex rounded-full bg-[#FFFFFF14] px-3'
+                ? "flex flex-col justify-center items-center  bg-[#040810] absolute w-screen h-screen top-0 left-0 z-30 border-white border-1"
+                : "hidden md:inline-flex rounded-full bg-[#FFFFFF14] px-3"
             }`}
             id="navbar-sticky"
           >
@@ -52,7 +74,7 @@ const Navbar = () => {
                 className="text-white px-3 py-2 hover:bg-white/10 rounded-full transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
-                  router.push('/blogs');
+                  router.push("/blogs");
                 }}
               >
                 Blog
@@ -61,7 +83,7 @@ const Navbar = () => {
                 className="text-white px-3 py-2 hover:bg-white/10 rounded-full transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
-                  router.push('/careers');
+                  router.push("/careers");
                 }}
               >
                 Careers
@@ -70,7 +92,7 @@ const Navbar = () => {
                 className="text-white px-3 py-2 hover:bg-white/10 rounded-full transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
-                  router.push('/about-us');
+                  router.push("/about-us");
                 }}
               >
                 About
@@ -108,7 +130,9 @@ const Navbar = () => {
             aria-controls="navbar-sticky"
             aria-expanded={isMenuOpen}
           >
-            <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open main menu'}</span>
+            <span className="sr-only">
+              {isMenuOpen ? "Close menu" : "Open main menu"}
+            </span>
             {isMenuOpen ? (
               <svg
                 className="w-5 h-5"

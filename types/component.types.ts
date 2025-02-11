@@ -1,3 +1,5 @@
+"use client";
+
 export type formDataType = {
     fullName: string;
     company: string;
