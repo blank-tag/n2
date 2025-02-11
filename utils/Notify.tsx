@@ -1,5 +1,3 @@
-"use client";
-
 import toast from "react-hot-toast";
 
 const Notify = (msg: string, type?: "success" | "error") => {
