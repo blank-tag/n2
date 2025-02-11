@@ -1,8 +1,7 @@
-"use client";
-
-import React from "react";
-import { Player } from "@lottiefiles/react-lottie-player";
-import Image from "next/image";
+'use client';
+import React from 'react';
+import { Player } from '@lottiefiles/react-lottie-player';
+import Image from 'next/image';
 
 interface CardProps {
   icon: string;
@@ -12,13 +11,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ icon, title, description }) => (
   <div className="relative  text-white rounded-md p-4 w-[310px] h-[210px] flex flex-col text-left transition-all duration-500 hover:bg-gradient-to-b from-[#14244C] to-[#047CFC] hover:shadow-lg hover:border hover:border-[#047CFC] hover:cursor-pointer">
-    <Image
-      src={icon}
-      width={40}
-      height={40}
-      className="mb-2"
-      alt={`${title} icon`}
-    />
+    <Image src={icon} width={40} height={40} className="mb-2" alt={`${title} icon`} />
     <h3 className="text-lg font-semibold">{title}</h3>
     <p className="text-sm mt-2">{description}</p>
   </div>
@@ -36,8 +29,7 @@ const Singularity = () => {
           Industries we serve
         </span>
         <p className="text-[#EFEDFDB2] text-center text-xs md:px-0 px-10 lg:text-base">
-          Improve your writing, organize your thoughts, and act as your
-          intellectual thought partner.
+          Improve your writing, organize your thoughts, and act as your intellectual thought partner.
         </p>
       </div>
 
@@ -49,7 +41,7 @@ const Singularity = () => {
             autoplay
             loop
             src="https://lottie.host/251998c5-6b33-4180-9875-8fcc4f4bf903/EBktv7FRum.json"
-            style={{ width: "80%", height: "80%" }}
+            style={{ width: '80%', height: '80%' }}
           />
         </div>
 

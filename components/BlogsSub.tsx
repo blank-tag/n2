@@ -1,7 +1,6 @@
-"use client";
-
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+'use client';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const BlogSub = () => {
   const router = useRouter(); // Use the useRouter hook for navigation
@@ -11,14 +10,12 @@ const BlogSub = () => {
       <div className="w-full px-4 md:px-20 py-12">
         {/* Title and Button Section */}
         <div className="w-full flex flex-col md:flex-row justify-between items-center">
-          <h1 className="font-inter text-[32px] md:text-[45px] mb-4 md:mb-0">
-            Neurify Blogs
-          </h1>
+          <h1 className="font-inter text-[32px] md:text-[45px] mb-4 md:mb-0">Neurify Blogs</h1>
           <button
             className="hidden md:flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#0A2B52] to-[#012039] text-white text-[16px] md:text-[20px] font-inter rounded-full shadow-lg hover:opacity-90 transition duration-300"
             onClick={(e) => {
               e.preventDefault();
-              router.push("/blogs"); // Navigate to the /blogs page
+              router.push('/blogs'); // Navigate to the /blogs page
             }}
           >
             <span>Read all</span>
@@ -30,11 +27,7 @@ const BlogSub = () => {
               stroke="currentColor"
               className="w-5 h-5"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.75L21 12m0 0-3.75 3.25M21 12H3"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.75L21 12m0 0-3.75 3.25M21 12H3" />
             </svg>
           </button>
         </div>
@@ -61,8 +54,8 @@ const BlogSub = () => {
                 </h2>
                 <p className="text-sm text-gray-400 mt-1">Ai Politics</p>
                 <p className="text-sm md:text-base mt-3 leading-relaxed">
-                  Unveiling the future of AI—why originality and foundational
-                  skills are the key to standing out in a crowded market.
+                  Unveiling the future of AI—why originality and foundational skills are the key to standing out in a
+                  crowded market.
                 </p>
               </div>
 
@@ -72,7 +65,7 @@ const BlogSub = () => {
                   className="flex items-center justify-center space-x-2 px-6 py-3 w-full bg-gradient-to-r from-[#0A2B52]/25 to-[#012039]/25 text-white text-base font-medium rounded-[10px] shadow-md hover:opacity-90 transition duration-300"
                   onClick={(e) => {
                     e.preventDefault();
-                    router.push("/blogs"); // Navigate to the /blogs page
+                    router.push('/blogs'); // Navigate to the /blogs page
                   }}
                 >
                   <span>Read Full Blog</span>
@@ -84,11 +77,7 @@ const BlogSub = () => {
                     stroke="currentColor"
                     className="w-5 h-5"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.25 8.75L21 12m0 0-3.75 3.25M21 12H3"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.75L21 12m0 0-3.75 3.25M21 12H3" />
                   </svg>
                 </button>
               </div>

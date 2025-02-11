@@ -1,38 +1,27 @@
-"use client";
+'use client';
+import Image from 'next/image';
+import { ChangeEvent, FormEvent, useState } from 'react';
+import Link from 'next/link';
+import axios from 'axios';
+import Notify from '@/utils/Notify';
+import { formDataType } from '@/types/component.types';
 
-import Image from "next/image";
-import { ChangeEvent, FormEvent, useState } from "react";
-import Link from "next/link";
-import axios from "axios";
-import Notify from "@/utils/Notify";
-import { formDataType } from "@/types/component.types";
-import { Toaster } from "react-hot-toast";
-
-const BASEURL: string | undefined = process.env.NEXT_PUBLIC_BACKEND_BASEURL;
+const BASEURL: string | undefined = process.env.NEXT_PUBLIC_BACKEND_BASEURL || 'http://localhost:3000';
 
 const Footer = () => {
   const [form, setForm] = useState<formDataType>({
-    fullName: "",
-    company: "",
-    email: "",
-    query: "",
+    fullName: '',
+    company: '',
+    email: '',
+    query: '',
   });
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!BASEURL) {
-      console.error("Environmental variables are missing!");
-      Notify("Environment set-up error!", "error");
-      return;
-    } else if (
-      form.email === "" ||
-      form.company === "" ||
-      form.fullName === "" ||
-      form.query === ""
-    ) {
-      console.log("first")
-      Notify("Please provide all the form details!", "error");
+      console.error('Environmental variables are missing!');
+      Notify('Environment set-up error!', 'error');
       return;
     }
 
@@ -44,23 +33,21 @@ const Footer = () => {
         query: form.query,
       });
       if (res.status === 201) {
-        Notify("Email sent successfully!", "success");
+        Notify('Email sent successfully!', 'success');
       }
     } catch (error: unknown) {
-      Notify(error + "" || "Something went wrong!", "error");
+      Notify(error + '' || 'Something went wrong!', 'error');
     }
 
     setForm({
-      fullName: "",
-      company: "",
-      email: "",
-      query: "",
+      fullName: '',
+      company: '',
+      email: '',
+      query: '',
     });
   };
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     e.preventDefault();
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -162,34 +149,19 @@ const Footer = () => {
               {/* Pages Section */}
               <div className="flex flex-col gap-2 relative z-10">
                 <h1 className="py-2 text-lg text-white">Pages</h1>
-                <Link
-                  href="/"
-                  className="transition-all duration-300 hover:text-white hover:underline"
-                >
+                <Link href="/" className="transition-all duration-300 hover:text-white hover:underline">
                   Home
                 </Link>
-                <Link
-                  href="/about"
-                  className="transition-all duration-300 hover:text-white hover:underline"
-                >
+                <Link href="/about" className="transition-all duration-300 hover:text-white hover:underline">
                   About
                 </Link>
-                <Link
-                  href="/contact-us"
-                  className="transition-all duration-300 hover:text-white hover:underline"
-                >
+                <Link href="/contact-us" className="transition-all duration-300 hover:text-white hover:underline">
                   Contact
                 </Link>
-                <Link
-                  href="/careers"
-                  className="transition-all duration-300 hover:text-white hover:underline"
-                >
+                <Link href="/careers" className="transition-all duration-300 hover:text-white hover:underline">
                   Careers
                 </Link>
-                <Link
-                  href="/blog"
-                  className="transition-all duration-300 hover:text-white hover:underline"
-                >
+                <Link href="/blog" className="transition-all duration-300 hover:text-white hover:underline">
                   Blog
                 </Link>
               </div>
@@ -197,28 +169,16 @@ const Footer = () => {
               {/* Services Section */}
               <div className="flex flex-col gap-2 ml-5 relative z-10">
                 <h1 className="py-2 text-lg text-white">Services</h1>
-                <Link
-                  href="#"
-                  className="transition-all duration-300 hover:text-white hover:underline"
-                >
+                <Link href="#" className="transition-all duration-300 hover:text-white hover:underline">
                   AI Product Development
                 </Link>
-                <Link
-                  href="#"
-                  className="transition-all duration-300 hover:text-white hover:underline"
-                >
+                <Link href="#" className="transition-all duration-300 hover:text-white hover:underline">
                   Large Language Models
                 </Link>
-                <Link
-                  href="#"
-                  className="transition-all duration-300 hover:text-white hover:underline"
-                >
+                <Link href="#" className="transition-all duration-300 hover:text-white hover:underline">
                   Automation Tools
                 </Link>
-                <Link
-                  href="#"
-                  className="transition-all duration-300 hover:text-white hover:underline"
-                >
+                <Link href="#" className="transition-all duration-300 hover:text-white hover:underline">
                   Data Pipelines
                 </Link>
               </div>
@@ -228,22 +188,13 @@ const Footer = () => {
             {/* Second Row: Business Features */}
             <div className="flex flex-col gap-2 mb-4 w-full md:w-auto mt-6 text-base justify-center text-[#8F9BB7] relative z-10">
               <h1 className="py-2 text-lg text-white">Business Features</h1>
-              <Link
-                href="#"
-                className="transition-all duration-300 hover:text-white hover:underline"
-              >
+              <Link href="#" className="transition-all duration-300 hover:text-white hover:underline">
                 Neurify Features One
               </Link>
-              <Link
-                href="#"
-                className="transition-all duration-300 hover:text-white hover:underline"
-              >
+              <Link href="#" className="transition-all duration-300 hover:text-white hover:underline">
                 Model Fine-Tuning
               </Link>
-              <Link
-                href="#"
-                className="transition-all duration-300 hover:text-white hover:underline"
-              >
+              <Link href="#" className="transition-all duration-300 hover:text-white hover:underline">
                 Sales & Customer Service Smart Agents
               </Link>
             </div>
@@ -266,73 +217,34 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row bg-black items-center justify-around gap-6 py-6">
         {/* Logo Section */}
         <div>
-          <Image
-            src="/NeurifyIcon.svg"
-            alt="Neurify Icon"
-            width={150}
-            height={80}
-          />
+          <Image src="/NeurifyIcon.svg" alt="Neurify Icon" width={150} height={80} />
         </div>
 
         {/* Text Section */}
         <div className="text-md text-center text-white sm:text-sm max-w-[347px] md:max-w-full">
-          Copyright © {new Date().getFullYear()} | Reserved by Neurify
-          Technologies
+          Copyright © {new Date().getFullYear()} | Reserved by Neurify Technologies
         </div>
 
         {/* Socials Section */}
         <div className="flex justify-center gap-4">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.instagram.com/neurify.ai/"
-          >
-            <Image
-              src="/neurify/icons/fb.svg"
-              alt="Facebook"
-              width={34}
-              height={34}
-            />
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/neurify.ai/">
+            <Image src="/neurify/icons/fb.svg" alt="Facebook" width={34} height={34} />
           </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://x.com/neurify81757"
-          >
-            <Image
-              src="/neurify/icons/x.svg"
-              alt="Twitter"
-              width={34}
-              height={34}
-            />
+          <a target="_blank" rel="noopener noreferrer" href="https://x.com/neurify81757">
+            <Image src="/neurify/icons/x.svg" alt="Twitter" width={34} height={34} />
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.linkedin.com/company/neurify-technologies-private-limited"
           >
-            <Image
-              src="/neurify/icons/linkedin.svg"
-              alt="LinkedIn"
-              width={34}
-              height={34}
-            />
+            <Image src="/neurify/icons/linkedin.svg" alt="LinkedIn" width={34} height={34} />
           </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.instagram.com/neurify.ai/"
-          >
-            <Image
-              src="/neurify/icons/insta.svg"
-              alt="Instagram"
-              width={34}
-              height={34}
-            />
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/neurify.ai/">
+            <Image src="/neurify/icons/insta.svg" alt="Instagram" width={34} height={34} />
           </a>
         </div>
       </div>
-      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
