@@ -5,7 +5,7 @@ import JobAccordion from "@/components/JobAccordion";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-const ContactPage = () => {
+const Careers = () => {
   return (
     <div className="w-full">
       <Navbar />
@@ -16,4 +16,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Careers;
