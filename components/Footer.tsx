@@ -31,7 +31,7 @@ const Footer = () => {
       form.fullName === "" ||
       form.query === ""
     ) {
-      console.log("first")
+      console.log("first");
       Notify("Please provide all the form details!", "error");
       return;
     }
@@ -297,7 +297,7 @@ const Footer = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://x.com/neurify81757"
+            href="https://x.com/neurifytech"
           >
             <Image
               src="/neurify/icons/x.svg"
