@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import { SparklesCore } from "@/components/SparklesCore";
+import { SparklesCore } from "@/components/SparklesCore";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -25,22 +25,22 @@ export const metadata: Metadata = {
   icons: {
     icon: "/company_icon.svg",
   },
-  openGraph: {
-    title: "Neurify - AI Innovations | Singularity & AnyVoice",
-    description:
-      "Discover Neurify Technologies' AI-powered solutions: Singularity (an in-house LLM) and AnyVoice (an AI-powered phone assistant).",
-    url: "https://neurifytech.ai",
-    siteName: "Neurify",
-    images: [
-      {
-        url: "/neurify/neurifyLogo_s.svg",
-        width: 1200,
-        height: 630,
-        alt: "Neurify",
-      },
-    ],
-    type: "website",
-  },
+  // openGraph: {
+  //   title: "Neurify - AI Innovations | Singularity & AnyVoice",
+  //   description:
+  //     "Discover Neurify Technologies' AI-powered solutions: Singularity (an in-house LLM) and AnyVoice (an AI-powered phone assistant).",
+  //   url: "https://neurifytech.ai",
+  //   siteName: "Neurify",
+  //   images: [
+  //     {
+  //       url: "/neurify/neurifyLogo_s.svg",
+  //       width: 1200,
+  //       height: 630,
+  //       alt: "Neurify",
+  //     },
+  //   ],
+  //   type: "website",
+  // },
 };
 
 export default function RootLayout({
@@ -75,7 +75,7 @@ export default function RootLayout({
           {/* Particle effect in the background */}
           <div className="fixed inset-0 w-full h-screen md:block hidden">
             {/* Particles for larger screens (tablet and desktop) */}
-            {/* <SparklesCore
+            <SparklesCore
               id="tsparticlesdesktop"
               background="transparent"
               minSize={1}
@@ -84,7 +84,7 @@ export default function RootLayout({
               className="w-full h-full"
               particleColor="#FFFFFF"
               speed={0.75}
-            /> */}
+            />
           </div>
           {/* Main content */}
           <div className="relative z-10">{children}</div>
